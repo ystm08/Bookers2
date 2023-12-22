@@ -1,5 +1,7 @@
 <main>
-  <h2>Books</h2>
+
+  <%= render "books/book", book: @book, user: @user %>
+
   <table>
     <thead>
       <tr>
@@ -7,5 +9,14 @@
         <th>Opinion</th>
       </tr>
     </thead>
+    <tbody>
+      <% @books.each do |book| %>
+      <tr>
+        <td><%= image_tag book.user.get_profile_image(100,100) %></td>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+      </tr>
+      <% end %>
+    </tbody>
   </table>
 </main>

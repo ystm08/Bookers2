@@ -1,7 +1,7 @@
 <h1>Editing Book</h1>
 
 <% if @book.errors.any? %>
-  <%= @book.error.count %>errors prohibited this obj from being saved:
+  <%= @book.errors.count %>errors prohibited this obj from being saved:
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>

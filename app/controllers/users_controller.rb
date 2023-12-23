@@ -16,6 +16,9 @@ class UsersController < ApplicationController
   def edit
     @profile_image = User.new
     @user = User.find(params[:id])
+    unless @user.id == current_user.id
+      redirect_to user_path
+    end
   end
 
   def update

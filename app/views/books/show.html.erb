@@ -1,10 +1,13 @@
+<p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <%= render "books/book", book: @book, user: @user %>
 
-<%= render 'book', book: @newbook, user: @user %>
+      <div class="col-md-8 offset-md-1">
 
 <h2>Book detail</h2>
 
-
-<table>
+<table class="table">
     <tbody>
         <tr>
             <td>
@@ -16,14 +19,17 @@
             <td><%= @book.body %></td>
             <td>
                 <% if @book.user == current_user %>
-                  <%= link_to "Edit", edit_book_path(@book.id) %>
+                  <%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-sm btn-success" %>
                 <% end %>
             </td>
             <td>
                 <% if @book.user == current_user %>
-                  <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
+                  <%= link_to "Destroy", book_path(@book), class:"btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に消しますか？" %>
                 <% end %>
             </td>
         </tr>
     </tbody>
 </table>
+</div>
+</div>
+</div>
